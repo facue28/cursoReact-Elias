@@ -4,17 +4,17 @@
     "nombre": "Notebook Noblex N14x1000 14.1 Hd Intel Celeron 4gb/128gb",
     "image":"https://dummyimage.com/200x150/ff0808/fff.png",
     "descripcion": "Esta notebook ofrece un rendimiento adecuado para tus tareas diarias\nCuenta con pantalla HD, almacenamiento rápido, conectividad inalámbrica y una variedad de puertos para conectar dispositivos externos. Es una opción conveniente y portátil para el uso personal y profesional",
-    "precio": 339.999,
+    "precio": 339999,
     "oferta": true,
     "tipoOferta": 0.15,
-    "stock": 15
+    "stock": 0
   },
   {
     "id": 2,
     "nombre": "Notebook Lenovo IdeaPad 3i Intel I5 1135g7 Ram 8gb Ssd 256gb Full hd Windows 11",
     "image":"https://dummyimage.com/200x150/ff0808/fff.png",
     "descripcion": "La notebook Lenovo 81X700FVUS es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.",
-    "precio": 735.555,
+    "precio": 735555,
     "oferta": false,
     "tipoOferta": 0.15,
     "stock": 7
@@ -24,7 +24,7 @@
     "nombre": "Notebook Cx Dual Core N3350 15,6 4gb 64gb Ssd Windows Pro Iron Gray",
     "image":"https://dummyimage.com/200x150/ff0808/fff.png",
     "descripcion": "Todo Lo Que Necesitas y Un Poco Mas. ¿No parás de moverte? La NUEVA Notebook CX de 15.6 Pulgadas te brinda una solución completa. De diseño innovador y materiales ultra livianos, pesando tan solo 1.2 Kg está pensada para que la lleves a todas partes, sin descuidar desempeño y funcionalidad. Incluye Windows 10 Pro",
-    "precio": 284.999,
+    "precio": 284999,
     "oferta": false,
     "tipoOferta": 0.15,
     "stock": 2
@@ -34,7 +34,7 @@
     "nombre": "Aspiradora Trineo Ultracomb AS-4201 2L roja 220V",
     "image":"https://dummyimage.com/200x150/1060cf/fff.png",
     "descripcion": "Con su línea de limpieza, Ultracomb hace que disfrutes de tu casa al máximo. Nunca fue tan fácil y rápido dejarla como nueva. Capacidad completa: Cuando su capacidad de almacenamiento esté completa, lo sabrás de inmediato a través de una luz o sonido indicador. Así no la sobrecargarás y evitarás roturas.",
-    "precio": 74.903,
+    "precio": 74903,
     "oferta": true,
     "tipoOferta": 0.15,
     "stock": 7
@@ -44,7 +44,7 @@
     "nombre": "Freidora De Aire Sin Aceite Electrica Unnic Air02 Regulador Temperatura 2,6 Litros Negra",
     "image":"https://dummyimage.com/200x150/1060cf/fff.png",
     "descripcion": "Freidora De Aire Digital Eléctrica Unnic Air02 Sin Aceite\n\nFreidora De Aire Unnic Air02, con un diseño resistente; que la hacen la mejor opción por su Potencia y Portabilidad, la mejor opción que la posiciona delante de los más modernos y competitivos productos de esta gama. Bandeja de 2,6 Litros Y Potencia de 1400W",
-    "precio": 80.599,
+    "precio": 80599,
     "oferta": false,
     "tipoOferta": 0.15,
     "stock": 5
@@ -54,7 +54,7 @@
     "nombre": "Mixer Daewoo DHB708S blanco 220V - 240V 300W",
     "image":"https://dummyimage.com/200x150/1060cf/fff.png",
     "descripcion": "Este electrodoméstico llegó para quedarse. Simple, práctico y cómodo de utilizar para que tus recetas se luzcan. Es sencillo de utilizar, se conecta, se colocan todos los ingredientes y a mixear, en pocos minutos todo listo.\n\nCalidad asegurada\nCuenta con cuchillas de acero que son resistentes, seguras y sencillas de limpiar, además de ser un producto perdurable en el tiempo.",
-    "precio": 59.999,
+    "precio": 59999,
     "oferta": true,
     "tipoOferta": 0.15,
     "stock": 15
@@ -64,7 +64,7 @@
     "nombre": "Camisa Lino Slub - Single Fin",
     "image":"https://dummyimage.com/200x150/28ba18/fff.png",
     "descripcion": "Disfruta de la frescura y originalidad de nuestras camisas manga larga de lino, ideal para días de mucho calor, una tela liviana, fresca y cómoda. Así mismo, es suave y agradable al contacto con la piel",
-    "precio": 59.990,
+    "precio": 59990,
     "oferta": true,
     "tipoOferta": 0.15,
     "stock": 24
@@ -74,7 +74,7 @@
     "nombre": "Campera Alaska - Ocre",
     "image":"https://dummyimage.com/200x150/28ba18/fff.png",
     "descripcion": "Si buscás una campera cálida y cómoda para esta temporada, te traigo la ideal. Nuestra campera leñadora con corderito en el interior es la elección perfecta! Te va a acompañar en toooodo el otoño/invierno.",
-    "precio": 127.992,
+    "precio": 127992,
     "oferta": false,
     "tipoOferta": 0.15,
     "stock": 27
@@ -84,7 +84,7 @@
     "nombre": "Camisa Symbols",
     "image":"https://dummyimage.com/200x150/28ba18/fff.png",
     "descripcion": "Estas camisas te mantendrán fresco y cómodo mientras conservan su talle perfecto gracias a nuestro proceso de prelavado. Es por eso que no se achican!",
-    "precio": 42.392,
+    "precio": 42392,
     "oferta": false,
     "tipoOferta": 0.15,
     "stock": 15

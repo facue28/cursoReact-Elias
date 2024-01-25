@@ -1,11 +1,12 @@
 import Header from "./components/Header";
-import ItemsContainer from "./components/ItemsContainer";
+import ItemsListContainer from "./components/ItemListContainer";
+import ItemsContainer from "./components/ItemListContainer";
 
 const App = () => {
   return (
     <>
     <Header/>
-    <ItemsContainer/>
+    <ItemsListContainer/>
     </>
   )
 }
