@@ -5,7 +5,6 @@ import data from "../../data/tiendOnProducts.json"
 const ItemsContainer = () => {
 
     const [data, setData] = useState([])
- 
     useEffect (() =>{
         fetch("../../data/tiendOnProducts.json")
         .then((resp) => resp.json())
@@ -13,9 +12,7 @@ const ItemsContainer = () => {
             setData(data)
         })
     },[])
-
     
-
     return(
         <div className="container">
             <div className="row">
