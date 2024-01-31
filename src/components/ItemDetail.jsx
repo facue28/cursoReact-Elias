@@ -14,7 +14,7 @@ const ItemDetail = ({product}) => {
                 <h5>Productos en stock : {product.stock}</h5>
                 <div className="container">
                     <h5>Precio $: {product.precio}</h5>
-                    <button type="button" className="btn btn-secondary">+</button>
+                    <button type="button" className="btn btn-secondary">+</button>y
                     <button type="button" className="btn btn-secondary">-</button>
                     <button type="button" className="btn btn-primary">Agregar al carrito</button>
                 </div>

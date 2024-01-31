@@ -8,16 +8,13 @@ import NavBar from "./components/NavBar";
 const App = () => {
   return (
       <>
-      {/* <BrowserRouter>
-      
+      <BrowserRouter>
         <NavBar/>
           <Routes>
             <Route path="/" element= {<ItemListContainer />}/>
             <Route path="/item/:id" element={<ItemDetailContainer/>} />
           </Routes>
-      </BrowserRouter> */}
-      {/* <ItemListContainer/> */}
-      <ItemDetailContainer itemId={2}/>
+      </BrowserRouter>
     </>
   )
 }
