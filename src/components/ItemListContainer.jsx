@@ -1,48 +1,37 @@
 
 import { useState, useEffect } from "react"
 import ItemContainer from "./ItemContainer"
+import LoadingScreen from "./LoadingScreen"
+import arrayProducts from "../../data/tiendOnProducts.json"
 
 
 const ItemsListContainer = () => {
-    const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
-    useEffect (() =>{
-        fetch("../../data/tiendOnProducts.json")
-        .then((resp) => resp.json())
-        .then((data) => {
-            setData(data)
-        })
-        // prueba de carga
+    const [products, setProducts] = useState([])
+
+    useEffect(()=>{
+        setProducts(arrayProducts)
+
         setTimeout(()=>{
             setLoading(false)
         }, 2000)
     },[])
+        return loading ?(
+            <LoadingScreen/>
+        ):(
+            <div className="container">
+                <div className="row">
+                    <div className="col text-center">
+                        <h1>Productos</h1>
+                    </div>
+                </div>
+                <div className="row ">
+                    <ItemContainer products = {products} />
+                </div>             
+            </div>
+        )
     
-    return loading ?(
-        <div className="container m-5 p-5">
-            <div class="text-center">
-                <div class="spinner-border" role="status">
-                </div>
-            </div>
-        </div>
-    ):(
-        <div className="container">
-            <div className="row">
-                <div className="col text-center">
-                    <h1>Productos</h1>
-                </div>
-            </div>
-            <div className="row ">
-                {data.map((data) =>(
-                    <>
-                    <ItemContainer {...data} />
-                    </>
-                ))}
-            </div>             
-        </div>
-    )
 }
-
 
 
 
