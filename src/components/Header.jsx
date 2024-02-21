@@ -13,7 +13,6 @@ const Header = () => {
                     
                 </div>
                 <div className="col-md-9 d-flex pb-2 ">
-                <Search/>
                 </div>
             </div>
             <div className="row bg-primary">

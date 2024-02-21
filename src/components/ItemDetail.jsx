@@ -1,22 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from './context/CartContext';
+import ItemCount from './ItemCount';
 
-const ItemDetail = ({product}) => {
-    
+const ItemDetail = ({item}) => {
+    const {addItem} = useContext(CartContext);
+
+    const onAdd = (quantity) => {
+        addItem(item, quantity)
+    }
     return (
         <div className="container-fluid text-center">
             <div className="row">
-            <div className="col-md-4">
-                <h3>{product.nombre}</h3>
-                <img src={product.image}alt={product.nombre}/>
+            <div className="col-md-6">
+                <h3>{item.name}</h3>
+                <img src={item.image}alt={item.name}/>
             </div>
             <div className="col-md-6">
-                <h4>{product.descripcion}</h4>
-                <h5>Productos en stock : {product.stock}</h5>
+                <h4>{item.descripcion}</h4>
+                <h5>Productos en stock : {item.stock}</h5>
                 <div className="container">
-                    <h5>Precio $: {product.precio}</h5>
-                    <button type="button" className="btn btn-secondary">+</button>y
-                    <button type="button" className="btn btn-secondary">-</button>
-                    <button type="button" className="btn btn-primary">Agregar al carrito</button>
+                    <h5>Precio $: {item.precio}</h5>
+                    <ItemCount stock = {item.stock} onAdd={onAdd} />                
                 </div>
             </div>
             </div>

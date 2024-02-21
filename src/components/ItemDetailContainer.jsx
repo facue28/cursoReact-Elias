@@ -1,48 +1,28 @@
- import { useEffect, useState } from "react"
-        import { useParams } from "react-router-dom"
-        import ItemDetail from "./ItemDetail"
-        import products from "../../data/tiendOnProducts.json"
+import { useEffect, useState } from "react"
+import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
+import {getDoc, getFirestore, doc} from "firebase/firestore"
+import LoadingScreen from "./LoadingScreen";
         
-        const ItemDetailContainer = () => {
-            const {id} = useParams()
-            const [product, setProduct ]= useState ([])
-            const [error, setError] = useState(null)
+const ItemDetailContainer = () => {
+    const [item, setItem] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const {id} = useParams();
         
+    useEffect(() => {
+        const db = getFirestore();
+        const producto = doc(db, "productos", id)
+        getDoc(producto).then(resp => {
+            setLoading(false)
+            setItem({id:resp.id, ...resp.data()});
+        })
+    },[id]);
         
-            useEffect(() => {
-                const fetchProduct = () => {
-                    console.log(products)
-                    console.log(id)
-                    try {
-                        const findProduct = products.find(product => product.id === parseInt(id))
-                        console.log(findProduct)
-                        
-                        if (findProduct) {
-                            setProduct(findProduct)
-                        } else {
-                            setError(new Error("Producto no encontrado"))
-                        }
-                    } catch (error) {
-                        setError(error)
-                    }
-                }
-                fetchProduct();
-                
-            },[id]);
-        
-            return (
-                <>
-                    <ItemDetail
-                        id= {id}
-                        nombre= {product.nombre}
-                        descripcion= {product.descripcion}
-                        precio= {product.precio}
-                        stock={product.stock}
-                        image={product.image}
-                    /> 
-                    
-                </>
-            )
-        }
+    return (
+        <>
+            {loading ? <LoadingScreen/> : <ItemDetail item={item}/>}
+        </>
+    )
+}
 export default ItemDetailContainer;
 

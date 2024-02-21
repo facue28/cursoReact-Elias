@@ -1,24 +1,29 @@
-
-import { useState, useEffect } from "react"
-import ItemContainer from "./ItemContainer"
+import { useState } from "react";
+import { useEffect } from "react"
+import ItemList from "./ItemList"
 import LoadingScreen from "./LoadingScreen"
-import arrayProducts from "../../data/tiendOnProducts.json"
-
+// import arrayProducts from "../../data/tiendOnProducts.json"
+import { collection, query, where, getDocs, getFirestore } from 'firebase/firestore'
+import { useParams } from "react-router-dom"
 
 const ItemsListContainer = () => {
-    const [loading, setLoading] = useState(true)
-    const [products, setProducts] = useState([])
+    const [items, setItems] = useState([]);
+    const {id} = useParams()
+    const [loading, setLoading] = useState(true);
 
-    useEffect(()=>{
-        setProducts(arrayProducts)
+    ///Firebase
+    useEffect(() => {
+        const db = getFirestore()
+        const itemsCollection = collection(db, "productos")
+        const consulta = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection;
 
-        setTimeout(()=>{
+        getDocs(consulta).then((resp) =>{
             setLoading(false)
-        }, 2000)
-    },[])
-        return loading ?(
-            <LoadingScreen/>
-        ):(
+            setItems(resp.docs.map(producto => ({id:producto.id, ...producto.data()})))
+        })
+    }, [id])
+
+        return (
             <div className="container">
                 <div className="row">
                     <div className="col text-center">
@@ -26,7 +31,7 @@ const ItemsListContainer = () => {
                     </div>
                 </div>
                 <div className="row ">
-                    <ItemContainer products = {products} />
+                    {loading ? <LoadingScreen/> : <ItemList items = {items} /> }
                 </div>             
             </div>
         )
@@ -37,3 +42,11 @@ const ItemsListContainer = () => {
 
 
 export default ItemsListContainer;
+
+// useEffect(()=>{
+//     setProducts(arrayProducts)
+
+//     setTimeout(()=>{
+//         setLoading(false)
+//     }, 2000)
+// },[])
