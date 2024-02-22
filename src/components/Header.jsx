@@ -1,7 +1,7 @@
 import CartWidget from "./CartWidget";
 import LogoTienda from "./LogoTienda";
 import NavBar from "./NavBar";
-import Search from "./Search";
+
 
 
 const Header = () => {

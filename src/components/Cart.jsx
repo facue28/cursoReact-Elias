@@ -12,7 +12,7 @@ const Cart = () => {
             <div className="container">
                 <div className="row">
                     <div className="col text-center">
-                        <p className="display-1">X</p>
+                        <p className="display-1">😩</p>
                         <div className="alert alert-danger" role="alert">
                         No hay productos en el carrito
                         </div>

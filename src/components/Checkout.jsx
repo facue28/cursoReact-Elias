@@ -1,15 +1,14 @@
-import { useContext, useState } from "react"
-import { CartContext } from "./context/CartContext"
-import { addDoc, collection, getFirestore } from "firebase/firestore"
+import { CartContext } from "./context/CartContext";
+import { useContext, useState } from "react";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 
 const Checkout = () => {
-    const [nombre, setNombre] = useState()
-    const [email, setEmail] = useState()
-    const [telefono, setTelefono] = useState()
-    const [orderId, setOrderId] = useState()
-    const { cart, clear,  SumaTotalProductos } = useContext(CartContext)
-
+    const [nombre, setNombre] = useState();
+    const [email, setEmail] = useState();
+    const [telefono, setTelefono] = useState();
+    const [orderId, setOrderId] = useState();
+    const {cart, clear, SumaTotalProductos} = useContext(CartContext);
 
     const generarOrden = () => {
         if (nombre.length === 0) {
@@ -20,30 +19,23 @@ const Checkout = () => {
             return false;
         }
 
-        if (telefono.lenght === 0) {
+        if (telefono.length === 0) {
             return false;
         }
 
-        const buyer = { name: nombre, email: email, phone: telefono }
-
-        const items = cart.map(item => ({ id:item.idx, title:item.title, price:item.precio }))
-
+        const buyer = {name:nombre, email:email, phone:telefono};
+        const items = cart.map(product => ({id:product.idx, title:product.name, price:product.precio}));
         const fecha = new Date();
-
-        const date = `${fecha.getDate()} - ${fecha.getMonth()+1} - ${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}`;
-
+        const date = `${fecha.getDate()}-${fecha.getMonth()+1}-${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}`;
         const total = SumaTotalProductos();
+        const order = {buyer:buyer, items:items, date:date, total:total};
 
-        const order = {buyer:buyer, items:productos, date:date, total:total };
-
-        ///Add order
+        // Adddocs
         const db = getFirestore();
-
-        const ordersCollection = collection(db, "orders");
-        addDoc(ordersCollection, order).then(resp => {
-            // clear();
-            // setOrderId(resp.id);
-            console.log(resp)
+        const productsCollection = collection(db, "orders");
+        addDoc(productsCollection, order).then(resp => {
+            clear();
+            setOrderId(resp.id);
         });
     }
 
@@ -56,65 +48,55 @@ const Checkout = () => {
             </div>
             <div className="row">
                 <div className="col-md-6">
-                    <form >
+                    <form>
                         <div className="mb-3">
-                            <label className="form-label">Nombre y Apellido </label>
-                            <input type="text" className="form-control" onInput={(e) => { setNombre(e.target.value) }} />
+                            <label className="form-label">Nombre</label>
+                            <input type="text" className="form-control" onInput={(e) => {setNombre(e.target.value)}} />
                         </div>
                         <div className="mb-3">
-                            <label className="form-label">Email </label>
-                            <input type="text" className="form-control" onInput={(e) => { setEmail(e.target.value) }} />
+                            <label className="form-label">Email</label>
+                            <input type="text" className="form-control" onInput={(e) => {setEmail(e.target.value)}} />
                         </div>
                         <div className="mb-3">
-                            <label className="form-label">Telefono </label>
-                            <input type="text" className="form-control" onInput={(e) => { setTelefono(e.target.value) }} />
+                            <label className="form-label">Teléfono</label>
+                            <input type="text" className="form-control" onInput={(e) => {setTelefono(e.target.value)}} />
                         </div>
-                        <button className="btn btn-warning" onClick={generarOrden}>Realizar Compra </button>
+                        <button type="button" className="btn btn-warning" onClick={generarOrden}>Generar Orden</button>
                     </form>
                 </div>
-                <div className="col-md-6">
+
+                <div className="col-md-6 text-center">
                     <table className="table">
                         <tbody>
                             {cart.map(product =>
                                 <tr key={product.id}>
-                                    <td className="align-middle">
-                                        <img src={product.image} alt={product.name} width={80} />
-                                    </td>
+                                    <td className="align-middle"><img src={product.image} alt={product.name} width={80} /></td>
 
-                                    <td className="text-start align-middle">
-                                        {product.name}
-                                    </td>
+                                    <td className="text-start align-middle">{product.name}</td>
 
-                                    <td className="text-start align-middle">
-                                        ${product.precio}
-                                    </td>
+                                    <td className="text-start align-middle">${product.precio}</td>
 
-                                    <td className="text-start align-middle">
-                                        {product.quantity}
-                                    </td>
-
-                                    <td className="text-start align-middle">
-                                        ${product.quantity * product.precio}
-                                    </td>
+                                    <td className="text-start align-middle">{product.quantity}</td>
+                                    
+                                    <td className="text-start align-middle">${product.quantity * product.precio}</td>
                                 </tr>
                             )}
-
                             <tr>
-                                <td className="text-center align-middle" colSpan={4}> &nbsp;
-                                </td>
-                                <td className="text-start align-middle">$ {SumaTotalProductos()}</td>
+                                <td className="text-center align-middle" colSpan={4}>&nbsp;</td>
+                                <td className="text-start align-middle">${SumaTotalProductos()}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+
             <div className="row my-5">
                 <div className="col text-center">
-                    {orderId ? <div className="alert alert-warning p-5 text-center" role="alert">
+                    {orderId ? <div className="alert alert-success p-5 text-center" role="alert">
                         <p className="display-1">🤑</p>
                         <h1>Gracias por su compra</h1>
-                        <p>El id de su compra es : <b>{orderId}</b></p>
-                    </div> : " "}
+                        <p>El Id de su compra es : <b>{orderId}</b></p>
+                    </div> : ""}
                 </div>
             </div>
         </div>
@@ -124,3 +106,4 @@ const Checkout = () => {
 export default Checkout;
 
 /// REVISAR EL TERMINAR COMPRA
+
