@@ -1,4 +1,3 @@
-import CartWidget from "./CartWidget";
 import LogoTienda from "./LogoTienda";
 import NavBar from "./NavBar";
 

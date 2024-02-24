@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useEffect } from "react"
 import ItemList from "./ItemList"
 import LoadingScreen from "./LoadingScreen"
-// import arrayProducts from "../../data/tiendOnProducts.json"
 import { collection, query, where, getDocs, getFirestore } from 'firebase/firestore'
 import { useParams } from "react-router-dom"
 
@@ -42,11 +41,3 @@ const ItemsListContainer = () => {
 
 
 export default ItemsListContainer;
-
-// useEffect(()=>{
-//     setProducts(arrayProducts)
-
-//     setTimeout(()=>{
-//         setLoading(false)
-//     }, 2000)
-// },[])

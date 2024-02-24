@@ -15,6 +15,5 @@ const Item = ({item}) => {
         </div>
     )
 }
-{/* <Link to={"/item/" + item.id} className="btn btn-primary m-1"}> <Link/> */}
 
 export default Item;
