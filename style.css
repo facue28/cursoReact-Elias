@@ -1,0 +1,320 @@
+
+*{
+    margin: 0;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    color:#23022E;
+}
+
+.text-color{
+    color: #23022E;
+} 
+
+
+body{
+    background-image:url(../img/fotoFondoWeb.jpg);
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat ;
+    background-attachment:fixed ;
+}
+
+.background-color{
+    background-color: #ffffff;
+}
+
+/* HEADER */
+
+/* .nav-container{
+    
+    padding-left: 0;
+    padding-right: 0;
+    height: 20rem;
+} */
+
+
+/* .container-ubicacion{
+    display: flex; 
+    justify-content: space-between;
+} */
+
+.navbar-pers{
+    display: flex;
+    align-items: end;
+    padding-bottom: 0;
+}
+
+
+.navbar-nav li{
+    padding: 0 1rem;
+}
+
+/* .logo-ubicacion{
+    display: flex;
+    width: 30%;
+    align-items: center;
+} */
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+}
+/* .img-logo{
+    width: 100%;
+} */
+
+.navbar-nav a {
+    padding: 0;
+    font-size: 2.2rem;
+    color: #23022E
+}
+
+
+.navbar-nav a:hover{
+    color: #30343f;
+}
+
+.index-video{
+    width: 90%;
+    border: none;
+}
+
+
+/* NOTICIAS */
+
+.cart-noticia{
+    display: flex;
+    flex-flow: row wrap
+}
+
+.card-indv{
+    display: flex;
+    justify-content: center;
+}
+
+.card-noticia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bot-noticia{
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    background-color: #0a58ca;
+    padding: 5px 10px;
+    width: 40%;
+    border: none;
+    cursor: pointer;
+}
+
+.img-tam{
+    aspect-ratio: 3/2;
+    object-fit: cover;
+}
+
+/* FOOTER */
+
+/* #footer{
+    position:relative;
+    bottom: 0;
+}
+
+.footer-ul{
+    display: flex;
+    justify-content: start;
+    width: 50%;
+}
+
+.ul-redes{
+    display: flex;
+} */
+
+/* .icon-footer{
+    font-size: 3rem;
+} */
+
+/* .footer-email{
+    display: flex;
+    justify-content: end;
+    width: 80%;
+    font-size:1rem;
+}
+
+.footer-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+
+.footer-email input{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: 3rem;
+    margin-top: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    padding-left: 1.2rem;
+    background-color: #673577
+}
+
+.ul-redes li{
+    padding: .5rem;
+    list-style: none;
+}
+
+.icon-color{
+    color: #673577;
+} */
+
+/* HEAD */
+.row-borde{
+    border-bottom: 0.5rem solid black;
+}
+
+
+/* SOBRE EL BLOG */
+
+.container-sobre-blog{
+    display: flex;
+}
+
+.container-derecho{
+    display: flex;
+    justify-content: end;
+}
+.container-derecho{
+    display: flex;
+    justify-content: end;
+    padding-right: 5rem;
+}
+
+.container-izquierdo{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.cont-izq{
+    padding-left: 5rem;
+    width:100%;
+    height: 100%;
+}
+.texto-izquierdo{
+    display: flex;
+    overflow: hidden;
+    margin: 0;
+    font-size:2.7rem ;
+}
+
+
+.img-sobre-blog{
+    width: 100%;
+}
+
+
+.btn-custom{
+    background-color: #5e316d;
+}
+
+/* RESTAURANES */
+.map-tamaño{
+    aspect-ratio: 4/4;
+    width: 100%;
+}
+
+.col-tamaño{
+    padding: 5rem;
+}
+/* prsae */
+.background-row{
+    background-color: #ffffff;
+}
+
+/* RECETAS */
+.row{
+    display: flex;
+}
+
+.video-background{
+    background-color: #ffffff;
+}
+
+.container-texto{
+    padding: 0;
+    height: 4rem;
+    background-color: #9e70a2;
+    align-items: center;
+}
+
+.borde-col-receta{
+    display: flex;
+    background-color: #dbdbd2;
+    border-radius: 2rem;
+}
+
+.ul-receta{
+    display: flex;
+    justify-content: center;
+}
+.ul-receta li{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    font-size: 2rem;
+}
+
+.titulo-receta{
+    display: flex;
+    margin: 2rem 0;
+}
+
+.img-receta{
+    width: 50%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/* CONTACTO */
+.container-contacto{
+    border: 4px solid #673577c1;;
+}
+
+.form-check{
+    display: flex;
+    justify-content: center;
+}
+
+.bot-input{
+    display: flex;
+    justify-content: center;
+}
+
+.background-input{
+    background-color: #6735777e;
+}
+
+/* MEDIA QUERY */
+
+@media screen and (max-width:990px) {
+    .navbar-pers{
+        justify-content: end;
+        align-items: center;
+    }
+    .cont-izq {
+        padding-left: 0;   
+    }
+}
+
